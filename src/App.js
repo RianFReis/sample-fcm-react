@@ -2,18 +2,18 @@ import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
 
-import { requestFirebaseNotificationPermission } from "./firebaseInit";
+// import { requestFirebaseNotificationPermission } from "./firebaseInit";
 
 function App() {
-  requestFirebaseNotificationPermission()
-    .then((firebaseToken) => {
-      // eslint-disable-next-line no-console
-      console.log("token main", firebaseToken);
-    })
-    .catch((err) => {
-      console.log(err);
-      return err;
-    });
+  // requestFirebaseNotificationPermission()
+  //   .then((firebaseToken) => {
+  //     // eslint-disable-next-line no-console
+  //     console.log("token main", firebaseToken);
+  //   })
+  //   .catch((err) => {
+  //     console.log(err);
+  //     return err;
+  //   });
 
   return (
     <div className="App">

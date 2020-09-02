@@ -20,20 +20,20 @@ const isLocalhost = Boolean(
     )
 );
 
-export const registerFirebaseServiceWorker = () => {
-  if ("serviceWorker" in navigator) {
-    navigator.serviceWorker
-      .register("firebase-messaging-sw.js")
-      .then(function (registration) {
-        // eslint-disable-next-line no-console
-        console.log("[SW]: SCOPE: ", registration.scope);
-        return registration.scope;
-      })
-      .catch(function (err) {
-        return err;
-      });
-  }
-};
+// export const registerFirebaseServiceWorker = () => {
+//   if ("serviceWorker" in navigator) {
+//     navigator.serviceWorker
+//       .register("firebase-messaging-sw.js")
+//       .then(function (registration) {
+//         // eslint-disable-next-line no-console
+//         console.log("[SW]: SCOPE: ", registration.scope);
+//         return registration.scope;
+//       })
+//       .catch(function (err) {
+//         return err;
+//       });
+//   }
+// };
 
 export function register(config) {
   if (process.env.NODE_ENV === "production" && "serviceWorker" in navigator) {

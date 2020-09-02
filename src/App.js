@@ -11,6 +11,7 @@ function App() {
       console.log("token main", firebaseToken);
     })
     .catch((err) => {
+      console.log(err);
       return err;
     });
 

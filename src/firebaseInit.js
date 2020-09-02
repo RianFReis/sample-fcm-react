@@ -14,15 +14,6 @@ var config = {
 firebase.initializeApp(config);
 const messaging = firebase.messaging();
 
-if ("serviceWorker" in navigator) {
-  navigator.serviceWorker
-    .register("./src/firebaseInit.js")
-    .then(function (registration) {
-      console.log("Service Worker Registered");
-      messaging.useServiceWorker(registration);
-    });
-}
-
 // next block of code goes here
 export const requestFirebaseNotificationPermission = () =>
   new Promise((resolve, reject) => {
@@ -30,7 +21,6 @@ export const requestFirebaseNotificationPermission = () =>
       .requestPermission()
       .then(() => messaging.getToken())
       .then((firebaseToken) => {
-        console.log(firebaseToken);
         resolve(firebaseToken);
       })
       .catch((err) => {
